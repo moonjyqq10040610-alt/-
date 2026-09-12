@@ -1,0 +1,48 @@
+.room-candle { position: absolute; width: 2.25%; height: 5.1%; pointer-events: none; z-index: 3; filter: drop-shadow(0 0 13px #efac62aa); }
+.room-candle-one { left: 47.2%; top: 50.9%; }.room-candle-two { left: 50.5%; top: 50.6%; }
+.cake-glow { position: absolute; left: 39%; top: 48%; width: 24%; height: 33%; pointer-events: none; background: radial-gradient(ellipse,#e8a64b12,transparent 68%); mix-blend-mode: screen; transition: opacity 2s; }
+.memory-lights { position: absolute; left: 45%; top: 69.4%; width: 10%; height: 1%; display: flex; align-items: center; justify-content: space-evenly; pointer-events: none; }
+.memory-lights i { width: 3px; height: 3px; border-radius: 50%; background: #ffe5a6; box-shadow: 0 0 12px 5px #ffb6422e; opacity: 0; transition: opacity 2s; }
+.memory-lights i.remembers { opacity: .8; }
+.wish-dialog[data-slot='dialog-content'] { max-width: 600px; overflow: visible; }
+.wish-title[data-slot='dialog-title'] { font: 400 clamp(30px,4vw,43px)/1.4 'Songti SC',Georgia,serif; text-align: center; margin: 0 0 17px; }
+.wish-description[data-slot='dialog-description'] { text-align: center; font: 15px/1.8 'Songti SC',serif; color: #b6a185; }
+.cake-closeup { display: block; position: relative; width: min(420px,82vw); aspect-ratio: 320 / 310; margin: 5px auto -30px; padding: 0; background: none; border: none; -webkit-mask-image: radial-gradient(ellipse at 50% 60%, black 34%,transparent 74%); mask-image: radial-gradient(ellipse at 50% 60%,black 34%,transparent 74%); }
+.cake-closeup svg { width: 100%; height: 100%; filter: brightness(.78); }
+.wish-flame { position: absolute; width: 12%; height: 24%; top: 11.6%; }.wish-flame-one { left: 34.9%; }.wish-flame-two { left: 51.1%; top: 11%; }
+.wish-actions { text-align: center; position: relative; z-index: 2; }
+.wish-actions .text-action { margin-top: 0; }
+.tap-to-blow { border: 0; background: transparent; color: #a69981; min-height: 44px; padding: 10px; font-size: 13px; }
+.birthday-darkness { position: fixed; z-index: 120; inset: 0; background: #020202; }
+.experience.is-wishing .room-art { filter: brightness(.3); }
+.experience.is-relighting .room-art { animation: roomRelight 3.7s ease both; }
+.experience.is-relighting .lamp-bloom { animation: lampRelight 3.7s ease both; }
+.relight-pool { position: absolute; border-radius: 50%; background: radial-gradient(ellipse,#ffcc802d,transparent 70%); pointer-events: none; opacity: 0; mix-blend-mode: screen; }
+.is-relighting .relight-pool { animation: lightReturns 2.1s ease both; animation-delay: var(--delay,0s); }
+.letter-object { position: absolute; left: 52%; top: 77.5%; width: 6.8%; height: 4%; background: #d8c19d; color: #795b3b; font: italic 14px Georgia,serif; border: 1px solid #a38e6a; box-shadow: 1px 3px 6px #0006; transform: rotate(-8deg); z-index: 5; }
+.letter-object::after { content: ''; position: absolute; inset: 0; background: linear-gradient(24deg,transparent 49%,#83684633 50%,transparent 51%); pointer-events: none; }
+.letter-dialog[data-slot='dialog-content'] { max-width: 710px; padding: 40px 20px 12px; }
+.birthday-letter { background: #e4d6ba; color: #493726; padding: 36px 53px 25px; box-shadow: 0 15px 100px #0006; transform: rotate(-.5deg); }
+.letter-heading { display: flex; justify-content: space-between; gap: 15px; font-size: 9px; color: #856f51; letter-spacing: .1em; border-bottom: 1px solid #9e876332; padding-bottom: 23px; }
+.letter-body { font: 16px/2.1 'Songti SC',STSong,Georgia,serif; margin-top: 29px; }
+.letter-body p { margin: 0 0 19px; }
+.letter-body p:first-child { font-size: 23px; }
+.letter-signature { text-align: right; font: italic 27px Georgia,serif; margin: 5px 5px 30px; }
+.letter-ending { padding-top: 25px; border-top: 1px solid #9e876332; text-align: center; }
+.letter-ending h2 { font: 400 30px/1.3 Georgia,serif; margin: 0 0 12px; }
+.letter-ending p { font: italic 14px Georgia,serif; margin: 0 0 15px; }
+.letter-ending span { display: block; font-size: 10px; color: #917858; letter-spacing: .1em; }
+.letter-ending em { display: block; font: italic 25px Georgia,serif; margin: 28px 0 17px; }
+@keyframes roomRelight { 0% { filter: brightness(.015); } 20% { filter: brightness(.15); } 55% { filter: brightness(.4); } 100% { filter: brightness(1); } }
+@keyframes lampRelight { 0%,25% { opacity: 0; } 100% { opacity: 1; } }
+@keyframes lightReturns { 0% { opacity: 0; } 60% { opacity: 1; } 100% { opacity: .5; } }
+@media(max-width:650px) { .birthday-letter { padding: 30px 26px 23px; }.letter-body { font-size: 16px; line-height: 2; }.letter-heading { font-size: 9px; gap: 9px; }.letter-ending h2 { font-size: 26px; }.wish-dialog[data-slot='dialog-content'] { padding-top: 45px; } }
+body:has(.wish-dialog) [data-slot='dialog-overlay'] { background:#11150d20;backdrop-filter:none; }
+.wish-dialog[data-slot='dialog-content'] { height:min(740px,88svh);width:min(600px,96vw);padding:22px;overflow:hidden;pointer-events:none; }
+.wish-dialog .wish-title { margin:10px 0; }.wish-dialog .close-object,.wish-dialog button{pointer-events:auto;}
+.cake-closeup { width:min(420px,85vw);height:45svh;max-height:400px;aspect-ratio:auto;mask-image:none;-webkit-mask-image:none;margin:0 auto;background:transparent;border-radius:32px; }
+.wish-actions { position:absolute;bottom:15px;left:10px;right:10px;padding:10px;background:#242b21d9;border:1px solid #c6ad8330;border-radius:22px; }
+.wish-dialog .close-object { top:12px;right:12px; }.wish-actions .text-action { margin:0 auto; }
+.is-wishing .room-title,.is-wishing .room-footer{opacity:0;pointer-events:none}
+
+.is-cinematic .room-title,.is-cinematic .room-footer,.is-cinematic .sound-control{opacity:0;pointer-events:none;transition:none}

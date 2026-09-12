@@ -1,0 +1,99 @@
+[data-slot='dialog-overlay'] { background: #0b0a08c9; backdrop-filter: blur(8px); z-index: 80; }
+.memory-dialog[data-slot='dialog-content'] { z-index: 81; display: block; width: min(92vw, 850px); max-width: 850px; max-height: 93svh; padding: 42px 28px 20px; overflow-y: auto; background: transparent; border: 0; border-radius: 0; box-shadow: none; color: #e9ddc8; --tw-ring-shadow: 0 0 #0000; scrollbar-width: thin; }
+.memory-episode[data-slot='dialog-title'] { text-align: center; font: 400 20px/1.5 Georgia, 'Songti SC', serif; color: #cdbd9e; margin: 0 28px 28px; }
+.close-object { position: absolute; right: 10px; top: 0; width: 44px; height: 44px; background: transparent; border: none; color: #e4d2b3; display: grid; place-items: center; }
+.episode-intro { min-height: 330px; display: flex; flex-direction: column; align-items: center; justify-content: center; animation: episodeIn 1.5s both; text-align: center; }
+.episode-intro span { font-size: 10px; letter-spacing: .3em; color: #9e9075; }
+.episode-intro p { font: 400 clamp(28px, 4vw, 47px)/1.3 Georgia, serif; max-width: 520px; margin: 27px 0; }
+.episode-intro i { font-size: 30px; color: #cc9c58; }
+.memory-content { animation: memoryIn .7s var(--ease-room) both; }
+.album-view { display: flex; flex-direction: column; align-items: center; }
+.polaroid { width: min(380px, 76vw); height: min(465px, 106vw); max-height: 62svh; perspective: 1400px; padding: 0; border: 0; background: transparent; color: var(--ink); transform: rotate(-2deg); }
+.polaroid-turner { display: block; position: relative; width: 100%; height: 100%; transform-style: preserve-3d; transition: transform .85s var(--ease-room); }
+.polaroid.is-flipped .polaroid-turner { transform: rotateY(180deg); }
+.polaroid-front, .polaroid-back { display: flex; flex-direction: column; position: absolute; inset: 0; padding: 17px 17px 0; background: #e7dfce; box-shadow: 0 16px 55px #0006; backface-visibility: hidden; -webkit-backface-visibility: hidden; }
+.polaroid-front img { width: 100%; flex: 1; min-height: 0; object-fit: contain; background: #24231f; filter: saturate(.9); }
+.photo-caption { font: italic 15px/1.5 Georgia, 'Songti SC', serif; min-height: 68px; display: grid; place-items: center; padding: 12px 0; }
+.polaroid-back { transform: rotateY(180deg); background: repeating-linear-gradient(0deg,#e7ddc7,#e7ddc7 29px,#baa88828 30px); justify-content: center; padding: 35px; }
+.back-note { font: 22px/1.95 'Kaiti SC', STKaiti, 'Songti SC', serif; white-space: pre-line; text-align: left; }
+.back-signature { position: absolute; bottom: 35px; right: 34px; font: italic 19px Georgia,serif; }
+.object-controls { display: flex; justify-content: space-between; align-items: center; width: min(385px, 84vw); margin: 25px 0 0; }
+.object-controls button, .tv-controls button { min-width: 44px; min-height: 44px; padding: 10px 14px; display: flex; align-items: center; justify-content: center; gap: 8px; border: 0; background: transparent; color: #d3c1a2; font-size: 14px; }
+.object-controls button:hover, .tv-controls button:hover { color: #fff1d2; }
+.memory-afterword { font-size: 15px; color: #bdad92; text-align: center; line-height: 1.9; margin: 12px 0; }
+.phone-memory { text-align: center; max-width: 600px; margin: 20px auto 0; padding: 0 20px; }
+.call-cities { display: flex; align-items: center; justify-content: center; gap: 20px; color: #978a72; font-size: 11px; letter-spacing: .2em; }
+.call-cities i { width: 82px; height: 1px; background: #94816755; }
+.phone-memory time { display: block; font: 18px Georgia,serif; color: #baa78a; margin: 42px 0 25px; }
+.phone-fragment { min-height: 155px; animation: memoryIn .6s both; }
+.phone-fragment h3 { font: 400 clamp(27px,4vw,39px)/1.6 'Songti SC', Georgia, serif; letter-spacing: .02em; white-space: pre-line; margin: 0; }
+.phone-fragment p { font-size: 14px; color: #a2947d; margin: 24px 0; }
+.text-action { border: 0; background: transparent; color: #cfb78e; display: flex; align-items: center; justify-content: center; gap: 16px; font-size: 14px; min-height: 44px; padding: 12px 14px; margin: 25px auto 0; }
+.text-action:hover { color: #f4dfbb; }
+.call-footnote { display: flex; justify-content: center; align-items: center; gap: 9px; color: #938670; font-size: 12px; margin: 45px 0 5px; }
+.calendar-memory { display: flex; flex-direction: column; align-items: center; }
+.calendar-paper { position: relative; background: #dfd1b5; width: min(335px, 76vw); color: #4d3c2b; padding: 30px 25px 20px; text-align: center; box-shadow: 0 25px 60px #0005, 0 4px #ae9c7f, 0 7px #786954; transform: rotate(-2deg); animation: paperIn .65s both; }
+.calendar-punches { letter-spacing: 12px; color: #817057; font-size: 13px; margin: -15px 0 27px; white-space: nowrap; }
+.calendar-month { font-size: 14px; letter-spacing: .22em; }
+.calendar-paper strong { display: block; font: 400 136px/1.2 Georgia,serif; letter-spacing: -.08em; padding-right: 10px; }
+.calendar-caption { display: block; font-size: 11px; letter-spacing: .18em; }
+.calendar-stamp { display: inline-block; padding: 8px 12px; border: 2px solid #885044; color: #885044; font-size: 17px; letter-spacing: .1em; transform: rotate(-12deg); margin: 29px 0 15px; }
+.actual .calendar-stamp { color: #526248; border-color: #526248; }
+.calendar-paper p { font: 15px/1.8 'Songti SC',serif; }
+.paper-action { min-height: 44px; background: transparent; border: none; display: flex; justify-content: center; align-items: center; gap: 15px; font-size: 14px; margin: 10px auto 0; color: #6c5133; }
+.open-book { background: linear-gradient(90deg,#c5b391,#ebdec2 5%,#e4d5b6 98%,#c6b695); color: #443425; padding: 44px 48px 33px; width: min(440px,100%); min-height: 385px; margin: auto; box-shadow: -5px 2px 0 #a59476, -8px 3px 0 #7e7159, 0 20px 70px #0005; transform: rotate(.8deg); animation: paperIn .6s both; }
+.book-imprint { text-align: center; font-size: 9px; letter-spacing: .18em; color: #8b7656; }
+.open-book h3 { font: 400 clamp(26px,4vw,34px)/1.3 Georgia,'Songti SC',serif; margin: 34px 0 15px; }
+.book-subtitle { font-size: 13px; color: #8c7151; }
+.book-lines { margin: 37px 0; font: 16px/2 'Songti SC',serif; }
+.book-lines p { margin: 5px 0; }
+.book-page-number { display: block; text-align: center; font: 13px Georgia,serif; color: #937e60; }
+.march-memory { display: flex; gap: 25px; align-items: center; justify-content: center; padding: 15px 0; }
+.event-ticket { width: 310px; flex-shrink: 0; background: #d5bc75; padding: 33px 26px 23px; color: #46351f; transform: rotate(-4deg); box-shadow: 0 15px 40px #0005; }
+.event-ticket > span { font-size: 10px; letter-spacing: .13em; }
+.event-ticket h3 { font: 400 40px/1.35 'Songti SC',serif; margin: 34px 0; }
+.event-ticket p { font: 16px/1.95 'Songti SC',serif; }
+.ticket-footer { display: flex; justify-content: space-between; font-size: 9px; letter-spacing: .08em; border-top: 1px dashed #6f542b77; padding-top: 19px; margin-top: 27px; }
+.event-photo { width: 275px; height: 350px; padding: 12px 12px 0; background: #e8dec8; border: 0; transform: rotate(4deg); box-shadow: 0 15px 40px #0005; }
+.event-photo img { height: calc(100% - 48px); width: 100%; object-fit: contain; background: #211f18; }
+.event-photo span { color: #67513b; height: 48px; display: flex; align-items: center; justify-content: center; gap: 15px; font-size: 14px; }
+.magic-memory { text-align: center; }
+.magic-memory > img { width: min(290px,70vw); max-height: 43svh; object-fit: contain; box-shadow: 0 10px 70px #0006; transform: rotate(-3deg); border: 10px solid #e1d5bb; }
+.magic-memory p { font: 18px/1.85 'Songti SC',serif; }
+.spell-button { background: transparent; border: 0; color: #e8bd72; padding: 12px 35px; font: italic 27px Georgia,serif; letter-spacing: .06em; text-shadow: 0 0 20px #edbe7480; }
+.spell-button span { font-size: 20px; padding-left: 20px; }
+.tv-memory { max-width: 640px; margin: auto; }
+.tv-picture { background: #111815; border: 16px solid #4a3824; border-bottom-width: 20px; outline: 2px solid #796044; border-radius: 40px / 30px; width: 100%; height: min(50svh,440px); box-shadow: 0 16px 80px #0009, inset 0 0 25px #0009; overflow: hidden; position: relative; }
+.tv-picture img { width: 100%; height: 100%; object-fit: contain; filter: saturate(.72) contrast(.96); }
+.scanlines { position: absolute; inset: 0; pointer-events: none; background: repeating-linear-gradient(0deg,transparent 0,transparent 2px,#050c0850 3px,#050c0850 4px); box-shadow: inset 0 0 50px #000a; border-radius: 26px; }
+.tv-channel { position: absolute; top: 18px; left: 22px; color: #aec18b; text-shadow: 0 0 5px #5e9958; font: 13px/1.8 monospace; }
+.tv-clock { position: absolute; bottom: 20px; right: 24px; font: 12px monospace; color: #bdce99; }
+.has-static img { opacity: .2; filter: contrast(5) grayscale(1); }
+.has-static .scanlines { background-size: 100% 3px; animation: crtStatic .07s steps(2) infinite; }
+.tv-controls { display: flex; justify-content: center; gap: 35px; margin-top: 15px; }
+@keyframes crtStatic { to { transform: translateY(2px); opacity: .4; } }
+@keyframes memoryIn { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: none; } }
+@keyframes paperIn { from { opacity: 0; transform: translateY(12px) rotate(2deg); } }
+@keyframes episodeIn { 0% { opacity: 0; transform: translateY(5px); } 30%,80% { opacity: 1; transform: none; } 100% { opacity: 0; } }
+@media(max-width:650px) {
+  .memory-dialog[data-slot='dialog-content'] { width: 100%; max-width: 100%; padding: 42px 20px 16px; }
+  .memory-episode[data-slot='dialog-title'] { font-size: 17px; line-height: 1.55; margin: 0 24px 23px; }
+  .polaroid { max-height: 60svh; }
+  .polaroid-front { padding: 12px 12px 0; }
+  .photo-caption { font-size: 13px; min-height: 60px; }
+  .back-note { font-size: 19px; }
+  .object-controls { margin-top: 14px; }
+  .open-book { padding: 27px 27px 24px; min-height: 350px; }
+  .march-memory { flex-direction: column; gap: 18px; padding: 0; }
+  .event-ticket { width: 88%; padding: 23px; }
+  .event-ticket h3 { font-size: 33px; margin: 18px 0; }
+  .event-ticket p { font-size: 15px; }
+  .ticket-footer { margin-top: 15px; }
+  .event-photo { width: 65%; height: 28svh; min-height: 190px; }
+  .tv-picture { height: 48svh; border-width: 10px; border-radius: 26px; }
+  .phone-fragment { min-height: 180px; }
+}
+.memory-dialog[data-slot='dialog-content'] { border-radius:24px; }
+.polaroid-front,.polaroid-back,.event-photo,.calendar-paper,.open-book,.event-ticket,.birthday-letter { border-radius:14px; }
+.polaroid-front img,.event-photo img,.magic-memory>img { border-radius:8px; }
+.memory-dialog button,.calendar-stamp { border-radius:14px; }

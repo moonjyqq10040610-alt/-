@@ -1,0 +1,14 @@
+.incoming-screen{position:absolute;inset:0;z-index:60;display:flex;flex-direction:column;align-items:center;justify-content:center;background:radial-gradient(ellipse at 50% 40%,#303a32 0%,#1c231e 42%,#101713 100%);color:#f3eddf;transition:opacity 1.4s ease;}
+.caller-portrait{width:132px;height:132px;display:grid;place-items:center;border-radius:38px;background:#e0d9c611;box-shadow:inset 0 0 0 1px #e8dfc715; font-size:80px;margin-bottom:27px;}
+.incoming-screen h2{font:400 29px/1.3 'Songti SC',serif;margin:0;letter-spacing:.07em;}
+.call-status{font-size:14px;letter-spacing:.07em;color:#c3c8bd;margin:15px 0 0;min-height:22px;font-variant-numeric:tabular-nums;}
+.answer-track{position:relative;margin-top:100px;width:min(310px,calc(100vw - 76px));height:66px;border-radius:36px;background:#edf3e313;border:1px solid #e6eadb24;box-shadow:inset 0 2px 16px #0003;}
+.slide-label{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;padding-left:36px;font-size:15px;color:#d1d8c6;gap:0;opacity:calc(1 - var(--answer-progress));pointer-events:none;}
+.slide-label svg:first-of-type{margin-left:11px}.slide-label svg:last-of-type{margin-left:-9px;opacity:.55}
+.answer-slider{position:absolute;left:calc(4px + (100% - 66px)*var(--answer-progress));top:4px;width:56px;height:56px;border-radius:50%;background:#6f8b6b;color:white;display:grid;place-items:center;touch-action:none;cursor:grab;box-shadow:0 3px 13px #0004;user-select:none;}
+.answer-slider:active{cursor:grabbing}.answer-slider:focus-visible{outline:2px solid #eee6cc;outline-offset:5px;}
+.call-wave{height:66px;margin-top:100px;display:flex;align-items:center;gap:5px}.call-wave i{height:7px;width:3px;border-radius:5px;background:#c4d5b7;animation:voicePulse 1.3s ease-in-out infinite;}
+@keyframes voicePulse{0%,100%{height:7px;opacity:.4}45%{height:30px;opacity:1}}
+.call-transition{opacity:0;pointer-events:none}.call-continuing{margin-top:119px;color:#bdc9b3;}
+.call-recovery{margin-top:70px;display:flex;gap:14px}.call-recovery button{border:1px solid #d0d4c330;border-radius:22px;background:#ffffff08;color:#dddcca;padding:13px 18px;display:flex;gap:8px;align-items:center;font-size:14px;}
+@media(max-height:600px){.caller-portrait{width:90px;height:90px;font-size:58px;margin-bottom:18px}.answer-track,.call-wave{margin-top:40px}}

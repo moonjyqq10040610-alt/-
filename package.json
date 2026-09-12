@@ -1,0 +1,46 @@
+{
+  "name": "birthday-stays-open",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "license": "MIT",
+  "description": "生日不打烊：一个可以探索、切换天气和许愿的 3D 生日小屋。",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/carpediemzzsssww-cpu/birthday-stays-open.git"
+  },
+  "engines": {
+    "node": ">=22.18.0"
+  },
+  "scripts": {
+    "dev": "vite --host 127.0.0.1",
+    "build": "node scripts/build.mjs",
+    "build:web": "node scripts/build.mjs --web",
+    "build:vercel": "npm run build:web",
+    "preview": "vite preview --host 127.0.0.1",
+    "check": "tsc --noEmit",
+    "test": "npm run build && npm run build:web && node --test tests/*.test.mjs"
+  },
+  "dependencies": {
+    "@base-ui/react": "1.7.0",
+    "class-variance-authority": "0.7.1",
+    "clsx": "2.1.1",
+    "lucide-react": "1.31.0",
+    "react": "19.2.6",
+    "react-dom": "19.2.6",
+    "tailwind-merge": "3.6.0",
+    "three": "0.185.1",
+    "zustand": "5.0.15"
+  },
+  "devDependencies": {
+    "@types/node": "22.19.19",
+    "@types/react": "19.2.14",
+    "@types/react-dom": "19.2.3",
+    "@types/three": "0.185.4",
+    "@vitejs/plugin-react": "6.0.2",
+    "esbuild": "0.27.3",
+    "postcss": "8.5.28",
+    "typescript": "5.9.3",
+    "vite": "8.0.13"
+  }
+}

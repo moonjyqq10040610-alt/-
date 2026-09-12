@@ -1,0 +1,10 @@
+.git
+.github
+node_modules
+dist
+dist-web
+docs
+tests
+reports
+artifacts
+*.zip

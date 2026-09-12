@@ -1,0 +1,70 @@
+/* One header grid, shared by every viewport and host safe area. */
+.room-header{position:absolute;z-index:25;top:18px;left:28px;right:28px;display:flex;align-items:center;justify-content:space-between;pointer-events:none;}
+.room-header .room-title{position:static;transform:none;opacity:1;color:var(--surround-ink);text-shadow:none;transition:color .8s;}
+.room-header .room-title h1{font:400 29px/1.25 var(--font-hand);letter-spacing:.015em;white-space:nowrap;}
+.room-tools{position:relative;display:flex;align-items:center;pointer-events:auto;}
+.room-tools>*+*{margin-left:9px;}
+.room-header .replay-call,.room-header .discovery-journal,.room-header .atmosphere-picker{position:relative;left:auto;right:auto;top:auto;transform:none;flex:none;margin-bottom:0;}
+.room-header .replay-call,.room-header .journal-toggle,.room-header .weather-toggle{display:flex;align-items:center;justify-content:center;width:44px;height:44px;min-height:44px;padding:0;border-radius:50%;border:1px solid var(--surround-border);background:var(--surround-surface);color:var(--surround-ink);box-shadow:0 3px 10px #12261c05;transition:background-color .3s,color .8s,border-color .8s;}
+.room-tools svg{display:block;flex:none;stroke-width:1.65;}
+.room-header button:hover{background:var(--surround-hover);}
+.room-header button[aria-expanded=true]{background:var(--surround-selected);}
+.room-header button:focus-visible{outline:2px solid var(--room-accent);outline-offset:4px;}
+@supports selector(:focus-visible){button:focus:not(:focus-visible){outline:none;}}
+.room-header .atmosphere-options,.room-header .journal-pages{position:absolute;left:auto;right:0;top:56px;transform:none;margin:0;background:var(--surround-surface);border:1px solid var(--surround-border);color:var(--surround-ink);box-shadow:0 14px 45px #13281c1a;border-radius:22px;backdrop-filter:none;max-width:calc(100vw - var(--safe-left) - var(--safe-right) - 32px);}
+.room-header .atmosphere-options{width:264px;padding:10px;display:grid;grid-template-columns:1fr 1fr;grid-gap:4px;}
+.room-header .atmosphere-options button{display:grid;grid-template-columns:20px 1fr 13px;grid-gap:8px;align-items:center;min-height:48px;padding:0 9px;border-radius:13px;font:400 14px/1.3 'PingFang SC','Microsoft YaHei',sans-serif;letter-spacing:.04em;text-align:left;color:var(--surround-ink);}
+.room-header .atmosphere-options .weather-check{opacity:0;}
+.room-header .atmosphere-options [aria-pressed=true]{background:var(--surround-selected);}
+.room-header .atmosphere-options [aria-pressed=true] .weather-check{opacity:1;}
+.room-header .journal-pages{right:-53px;width:306px;padding:20px 20px 12px;}
+.room-header .journal-grid button{color:var(--surround-ink);border-color:var(--surround-border);border-radius:8px!important;}
+.room-header .journal-grid .undiscovered{color:var(--surround-ink);opacity:.65;}
+.room-header .journal-bottom button{color:var(--surround-ink);border-radius:12px;}
+/* Restrained matte color fields; the room's lamps supply the visible glow. */
+.backdrop-layer{background:linear-gradient(180deg,var(--backdrop-edge) 0%,var(--backdrop-glow) 100%);}
+.experience[data-atmosphere=night] .room-backdrop:after,.experience[data-atmosphere=candle] .room-backdrop:after{display:none;}
+.room-film-grain{display:none;}
+.is-three-dimensional .sound-control{font:500 10px/1.3 'PingFang SC',sans-serif;letter-spacing:.07em;}
+.is-three-dimensional .focus-heading button{color:var(--surround-ink);background:var(--surround-surface);border-color:var(--surround-border);}
+.memory-dialog[data-slot=dialog-content]{max-height:calc(var(--app-height,100vh) - var(--host-top) - var(--safe-top) - var(--safe-bottom) - 32px);}
+.incoming-screen{background:linear-gradient(165deg,#263f35 0%,#182e29 100%);}
+.caller-portrait{position:relative;background:#f0dfb9;border:5px solid #e5d6b7;box-shadow:0 12px 36px #0a201d24,inset 0 0 0 1px #fff4d6;border-radius:50%;width:126px;height:126px;font-size:76px;}
+.incoming-screen h2{font:400 27px/1.5 var(--font-hand);letter-spacing:0;}
+.call-status{font:400 13px/1.6 'PingFang SC',sans-serif;color:#c9d3bf;letter-spacing:.05em;margin-top:12px;}
+.answer-track{background:#f2e6c813;border-color:#d0dbc22e;box-shadow:none;}
+.answer-slider{background:#d9c9a2;color:#294532;box-shadow:0 4px 12px #09221924;}
+.slide-label{font:400 14px/1.4 'PingFang SC',sans-serif;color:#e2e5d1;}
+.call-caption{color:#f4e5c9;}
+.call-return{font:400 13px/1.5 'PingFang SC',sans-serif;color:#ced7c6;border-color:#b9c5b533;}
+.room-reset{position:absolute;z-index:24;left:28px;bottom:18px;display:flex;align-items:center;justify-content:center;width:44px;height:44px;padding:0;border-radius:50%!important;color:var(--surround-ink);background:var(--surround-surface);border:1px solid var(--surround-border);}
+.room-reset:hover{background:var(--surround-hover);}
+.room-reset:focus-visible{outline:2px solid var(--room-accent);outline-offset:4px;}
+.is-three-dimensional .focus-detail{border-radius:24px;}
+.frame-front,.frame-back{border-radius:9px;}
+.is-three-dimensional .focus-heading{top:18px;left:28px;}
+.mobile-room-hint{display:none;}
+@media(max-width:650px){
+ .mobile-room-hint{display:inline;}.desktop-room-hint{display:none;}
+ .room-header{top:12px;left:16px;right:16px;}
+ .room-header .room-title h1{font-size:22px;}
+ .room-tools>*+*{margin-left:8px;}
+ .room-header .journal-pages{right:-52px;}
+ .incoming-screen h2{font-size:24px;}
+ .room-reset{left:16px;bottom:18px;}
+ .three-hover{left:50%;transform:translateX(-50%);bottom:28px;max-width:calc(100% - 132px);font-size:12px;white-space:normal;line-height:1.5;text-align:center;}
+ .is-three-dimensional .sound-control{right:calc(16px + var(--safe-right));}
+ .is-three-dimensional.is-focused .sound-control{top:calc(var(--host-top) + var(--safe-top) + 12px);bottom:auto;background:var(--surround-surface);color:var(--surround-ink);border-color:var(--surround-border);}
+ .is-three-dimensional .focus-heading{top:12px;left:16px;right:76px;}
+ .is-three-dimensional .focus-detail{bottom:20px;width:calc(100% - 32px);max-height:32%;overflow:auto;padding:14px 16px;}
+ .is-three-dimensional .focus-calls .focus-detail,.is-three-dimensional .focus-drawer .focus-detail{bottom:20px;}
+ .object-tv-control{width:44px;height:44px;}
+ .focus-actions button,.focus-text-action{min-height:44px;}
+ .focus-frames .focus-actions{gap:8px;}
+}
+@media(max-width:370px){
+ .room-header .room-title h1{font-size:20px;}
+ .room-tools>*+*{margin-left:6px;}
+ .room-header .journal-pages{right:-50px;}
+}
+@media(max-height:560px){.room-header{top:8px;}}

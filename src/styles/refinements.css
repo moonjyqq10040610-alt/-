@@ -1,0 +1,74 @@
+@font-face{font-family:'Room Hand';src:url('../fonts/room-hand.woff2') format('woff2');font-weight:100 900;font-display:swap;}
+:root{--font-hand:'Room Hand','Kaiti SC','STKaiti',serif;}
+body,button,input,select,textarea{font-family:var(--font-hand);}
+.incoming-screen h2{font-family:var(--font-hand);font-size:34px;letter-spacing:.01em;}
+.call-status,.slide-label{font-size:17px;letter-spacing:0;}
+.is-three-dimensional .room-title{top:31px;left:4.3%;}
+.is-three-dimensional .room-title h1{font:400 clamp(23px,2.3vw,31px)/1.3 var(--font-hand);letter-spacing:.015em;}
+.room-whisper,.focus-detail h2,.focus-note,.back-note,.photo-caption,.memory-episode,.memory-afterword,.birthday-letter,.wish-title,.birthday-letter p{font-family:var(--font-hand);}
+.room-whisper{font-size:23px;}
+.discovery-journal{position:absolute;top:28px;right:calc(4.3% + 108px);z-index:20;}
+.discovery-journal .journal-toggle{width:44px;height:44px;display:grid;place-items:center;list-style:none;background:#242c22b0;color:#e1ceac;border:1px solid #d0b98c35;border-radius:50%;cursor:pointer;}
+.discovery-journal .journal-toggle::-webkit-details-marker{display:none;}
+.discovery-journal .journal-toggle:focus-visible{outline:2px solid #e5bd7e;outline-offset:4px;}
+.discovery-journal .journal-toggle[aria-expanded=true]{background:#e3d1af;color:#48503e;}
+.journal-pages{position:absolute;top:56px;right:0;width:305px;max-height:min(620px,calc(100svh - 155px));overflow-y:auto;padding:20px 18px 10px 24px;background:#e8dbc1;color:#48503e;border-radius:17px 22px 22px 17px;border:1px solid #c5b391;box-shadow:0 15px 50px #0004,inset 9px 0 0 #d3c4a830;}
+.journal-pages>p{margin:0 0 14px;font-size:21px;}
+.journal-grid{display:grid;grid-template-columns:1fr 1fr;column-gap:13px;}
+.journal-grid button{position:relative;min-height:44px;text-align:left;border:0;border-bottom:1px solid #85734a24;border-radius:0!important;background:transparent;color:#4e513d;font-size:16px;padding:8px 2px;}
+.journal-grid button:hover{color:#936948;background:#d4bf922e;border-radius:9px!important;}
+.journal-grid .undiscovered{letter-spacing:.15em;color:#837864;}
+.journal-grid i{font-size:11px;font-style:normal;color:#a68c48;padding-left:4px;}
+.journal-bottom{display:flex;justify-content:space-between;margin-top:10px;padding-top:5px;}
+.journal-bottom button{border:0;background:transparent;color:#716e58;padding:10px;min-width:44px;min-height:44px;}
+.is-three-dimensional .focus-calls .focus-detail{background:#e3d3b4;color:#4a4b39;border:1px solid #cbbb9c;box-shadow:0 8px 30px #10181035;width:max-content;min-width:225px;padding:17px 26px;transform:translateX(-50%) rotate(-.6deg);}
+.focus-calls .focus-detail h2{color:#49513e;font-size:24px;line-height:1.5;white-space:pre-line;}
+.focus-calls .focus-detail time{font-size:14px;letter-spacing:.06em;color:#8d8168;}
+.focus-calls .focus-detail .focus-text-action{color:#687054;background:#70835c10;border:1px solid #9a9f812f;width:44px;height:44px;border-radius:50%;}
+.memory-episode{font-size:19px;letter-spacing:.02em;text-transform:none;}
+.photo-caption{font-size:17px;}.album-label,.flip-control{font-size:16px;}
+.cat-photos-link{font-size:17px;}
+@media(max-width:650px){.is-three-dimensional .room-title{top:23px;left:20px;}.is-three-dimensional .room-title h1{font-size:23px;}.discovery-journal{top:17px;right:66px;}.journal-pages{right:-46px;width:min(305px,calc(100vw - 36px));}.atmosphere-picker{top:82px;}.is-three-dimensional .focus-calls .focus-detail{max-width:calc(100vw - 38px);bottom:45px;}.focus-calls .focus-detail h2{font-size:22px;}}
+@media(prefers-reduced-motion:reduce){.room-whisper{animation:none;}}
+.memory-episode[data-slot='dialog-title'],.wish-title[data-slot='dialog-title'],.letter-body,.letter-signature,.letter-ending h2,.letter-ending p,.letter-ending em{font-family:var(--font-hand);}
+.is-focused .room-title,.is-wishing .room-title,.is-cinematic .room-title{opacity:0;transition:opacity .2s;}
+/* A warm paper backdrop keeps the green room distinct from its surroundings. */
+.room-surface{position:absolute;inset:0;}
+.experience.is-three-dimensional{background:#d2bcb4;}
+.is-three-dimensional .room-vignette{background:radial-gradient(ellipse at 50% 47%,transparent 49%,#71534914 100%);box-shadow:none;}
+.is-three-dimensional .room-title{color:#57473f;text-shadow:none;}
+.replay-call{position:absolute;right:calc(4.3% + 160px);top:28px;z-index:20;width:44px;height:44px;display:grid;place-items:center;border:1px solid #70594235;background:#f1e5d5c9;color:#695447;border-radius:50%!important;cursor:pointer;}
+.discovery-journal .journal-toggle{background:#f1e5d5c9;color:#695447;border-color:#70594235;}
+.is-three-dimensional .sound-control{color:#604f43;}
+.replay-call:hover,.discovery-journal .journal-toggle:hover{background:#fff1de;}
+.replay-call:focus-visible{outline:2px solid #695447;outline-offset:4px;}
+.call-return{position:absolute;bottom:10%;color:#d3c8bb;background:transparent;border:1px solid #c7bda438;border-radius:24px;padding:12px 20px;min-height:44px;font-size:16px;cursor:pointer;}
+.incoming-screen:focus{outline:none;}
+.is-three-dimensional .focus-drawer .focus-detail{background:#e4d3b5;color:#514c39;width:max-content;}
+.drawer-actions{display:flex;gap:10px;}.drawer-actions button{border:1px solid #92785345;background:#f4e5ca;color:#5e563e;padding:10px 16px;min-height:44px;font-size:16px;}
+@media(max-width:650px){.replay-call{top:17px;right:118px;}.is-three-dimensional .sound-control{background:#f1e5d5ce;border-radius:50%;}.is-three-dimensional .focus-drawer .focus-detail{bottom:40px;}.is-three-dimensional .room-title h1{font-size:22px;}.is-three-dimensional .room-title{left:18px;}.discovery-journal{right:66px;}}
+@media(min-width:651px) and (max-width:950px){.is-three-dimensional .room-title h1{font-size:24px;}.atmosphere-picker{top:89px;}.replay-call{right:calc(4.3% + 153px);}}
+
+.is-three-dimensional.is-focused .sound-control,.is-three-dimensional.is-wishing .sound-control,.experience.has-call .sound-control{color:#e8d8bd;background:#20241c85;border-radius:24px;}
+/* Clear daylight, blue dusk and deep evening frame the warm, olive room. */
+.experience.is-three-dimensional{background:#000;--surround-ink:#4b4c43;--surround-surface:#fafbf5dc;--surround-border:#56675d29;--surround-hover:#ffffff;--surround-selected:#d8dfd24d;}
+.room-backdrop{position:absolute;inset:0;pointer-events:none;opacity:var(--backdrop-visibility,1);}
+.backdrop-layer{position:absolute;inset:0;opacity:0;background:radial-gradient(ellipse at 50% 43%,var(--backdrop-glow) 0%,transparent 54%),linear-gradient(135deg,var(--backdrop-glow) 0%,var(--backdrop-edge) 58%,var(--backdrop-edge) 100%);transition:opacity 1.3s ease;}
+.backdrop-layer.is-active{opacity:1;}
+.experience[data-atmosphere=night] .room-backdrop:after,.experience[data-atmosphere=candle] .room-backdrop:after{content:'';position:absolute;inset:0;background:linear-gradient(145deg,#17382d55 0%,transparent 52%,#07161155 100%);pointer-events:none;}
+.experience[data-tone=dark]{--surround-ink:#e4eee6;--surround-surface:#1b3930dc;--surround-border:#b9d8c82b;--surround-hover:#2a5547ef;--surround-selected:#b8d7c31c;}
+.experience[data-atmosphere=candle]{--surround-ink:#e7ddcd;--surround-surface:#282927cc;--surround-border:#d6c2a32b;--surround-hover:#423e36;}
+.is-three-dimensional .room-vignette{background:none;box-shadow:none;}
+.room-film-grain{opacity:.018;mix-blend-mode:soft-light;mask-image:radial-gradient(ellipse at 50% 55%,#000 25%,transparent 68%);}
+.is-three-dimensional .room-title,.is-three-dimensional .sound-control{color:var(--surround-ink);transition:color 1.1s ease;}
+.is-three-dimensional .replay-call,.discovery-journal .journal-toggle,.atmosphere-picker summary,.is-three-dimensional .sound-control{color:var(--surround-ink);background:var(--surround-surface);border:1px solid var(--surround-border);box-shadow:0 2px 10px #10192304;transition:color 1.1s ease,background-color 1.1s ease,border-color 1.1s ease;}
+.is-three-dimensional .sound-control{border-radius:24px;}
+.replay-call:hover,.discovery-journal .journal-toggle:hover,.atmosphere-picker summary:hover,.is-three-dimensional .sound-control:hover{background:var(--surround-hover);}
+.replay-call:focus-visible,.discovery-journal .journal-toggle:focus-visible,.atmosphere-picker summary:focus-visible{outline:2px solid var(--surround-ink);outline-offset:4px;}
+.atmosphere-options{background:var(--surround-surface);border-color:var(--surround-border);backdrop-filter:blur(16px);box-shadow:0 12px 35px #09141e12;}
+.atmosphere-options button{color:var(--surround-ink);}
+.atmosphere-options button:hover,.atmosphere-options button[aria-pressed=true]{color:var(--surround-ink);background:var(--surround-selected);}
+.three-hover{color:var(--surround-ink);background:var(--surround-surface);border:1px solid var(--surround-border);}
+.is-three-dimensional.is-focused .sound-control,.is-three-dimensional.is-wishing .sound-control,.experience.has-call .sound-control{color:#e8d8bd;background:#20241cbf;border-color:#e8d8bd24;}
+@media(max-width:650px){.backdrop-layer{background:radial-gradient(ellipse at 50% 51%,var(--backdrop-glow) 0%,var(--backdrop-edge) 81%);}.is-three-dimensional .sound-control{border-radius:50%;}}
+@media(prefers-reduced-motion:reduce){.backdrop-layer,.is-three-dimensional .room-title,.is-three-dimensional .sound-control,.is-three-dimensional .replay-call,.discovery-journal .journal-toggle,.atmosphere-picker summary{transition:none;}}
